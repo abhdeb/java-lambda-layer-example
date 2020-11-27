@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Lambda Layer Application.
+Resources:
+  function:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: java-lambda-layer-example
+      CodeUri: ../target/java-lambda-layer-example-1.0.0.jar
+      Handler: com.amazonaws.lambda.handler.LambdaFunctionHandler::handleRequest
+      Runtime: java8
+      MemorySize: 512
+      Timeout: 30
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AWSLambdaReadOnlyAccess
+        - AWSXrayWriteOnlyAccess
+        - AWSLambdaVPCAccessExecutionRole
+        - AmazonS3FullAccess 
+      Tracing: Active
+      Layers:
+        - !Ref libs
+  libs:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: java-lambda-layer-example-dependencies
+      Description: Dependencies for the java-lambda-layer-example application.
+      ContentUri: ../target/java-lambda-layer-example-dependencies.zip
+      CompatibleRuntimes:
+        - java8
