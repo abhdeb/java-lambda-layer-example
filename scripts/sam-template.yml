@@ -19,8 +19,9 @@ Resources:
         - AmazonS3FullAccess 
       Tracing: Active
       Layers:
-        - !Ref libs
-  libs:
+        - !Ref layerdef
+        
+  layerdef:
     Type: AWS::Serverless::LayerVersion
     Properties:
       LayerName: java-lambda-layer-example-dependencies

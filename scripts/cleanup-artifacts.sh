@@ -3,6 +3,7 @@ STACK=java-lambda-layer-example
 FUNCTION=$(aws cloudformation describe-stack-resource --stack-name $STACK --logical-resource-id function --query 'StackResourceDetail.PhysicalResourceId' --output text)
 
 rm -f out.yml out.json
+echo "Deleted tmp deployment files."
 
 # Delete CF Stack
 aws cloudformation delete-stack --stack-name $STACK
