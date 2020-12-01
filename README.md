@@ -12,7 +12,7 @@ Java 8, Maven 3, AWS CLI 2 and Bash Shell
 Download or clone the repository. The project source includes function code and supporting resources:
 - src/main - A Java function.
 - src/test - Junit test classes.
-- scripts - Contains an AWS CloudFormation template (sam-template.yml) that creates an application and shell scripts that use the AWS CLI to deploy and manage the application.
+- scripts - Contains an AWS CloudFormation template (template.yml) that creates an application and shell scripts that use the AWS CLI to deploy and manage the application.
 - pom.xml - A Maven build file.
 
 1. Configure AWS CLI with aws configure command to utilize the correct AWS account. 
