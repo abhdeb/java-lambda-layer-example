@@ -45,3 +45,7 @@ $ ./invoke-lambda.sh
 
 6. Cleanup and delete the applion run cleanup-artifacts.sh
 
+```sh
+$ ./cleanup-artifacts.sh
+```
+
