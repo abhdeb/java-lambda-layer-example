@@ -1,6 +1,8 @@
 # java-lambda-layer-example
 An example java lambda with layers and sam template
 
+![Lambda Layer](https://d2908q01vomqb2.cloudfront.net/77de68daecd823babbb58edb1c8e14d7106e83bb/2018/12/21/Lambda-Layers-1-300x150.jpg)
+
 # Requirements:
 
 Java 8, Maven 3, AWS CLI 2 and Bash Shell
@@ -42,6 +44,7 @@ $ ./invoke-lambda.sh
 }
 "text/plain-abhdebgenerabucket-trigger/test_lambda_layer.txt"
 ```
+![X-Ray](https://github.com/abhdeb/java-lambda-layer-example/blob/master/images/xray-view.jpg?raw=true)
 
 6. Cleanup and delete the applion run cleanup-artifacts.sh
 
